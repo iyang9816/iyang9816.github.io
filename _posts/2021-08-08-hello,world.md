@@ -12,4 +12,4 @@ tags:
 
 # 这是网站开通的第一篇博文
 
-# 所以，hello，world，出现了。
+所以，hello，world，出现了。
