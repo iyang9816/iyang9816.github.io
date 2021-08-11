@@ -1,0 +1,91 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相册</title>
+    <meta name="author" content="iyang">
+    <script src="libs/jquery.js"></script>
+    <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="libs/fancybox/helpers/jquery.fancybox-buttons.css">
+    <link rel="stylesheet" href="libs\fancybox\helpers\jquery.fancybox-thumbs.css">
+    <script src="libs/fancybox/jquery.fancybox.js"></script>
+    <script src="libs/fancybox/helpers/jquery.fancybox-buttons.js"></script>
+    <script src="libs/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
+   
+     <!--css异步加载:同时加载   js是同步加载:从上到下按照顺序加载-->
+    <style>
+      body{
+        background-color: #333;
+        width:100%;
+        height:100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      /*id下的所有div样式选择法*/
+      #xc div{
+        width: 100px;
+        height: 100px;
+        border: 5px solid #fff;
+        /*border-block-start: 实线;
+        border-width: 宽高;
+        border-color: 颜色;*/
+        /*在同级下,下面的样式会覆盖掉上面的样式*/
+        border-bottom: 18px solid #fff;
+        /*过渡表示2D转换*/
+        transition: transform 0.5s;
+      }
+     #xc div a{
+       /*转换为块级元素,进行宽高的设计*/
+       display: block;
+       width: 100px;
+       height: 100px;
+       /*首行缩进*/
+       text-indent: -2000px;
+       /*截取溢出部分*/
+       overflow: hidden;
+     } 
+     /*当鼠标经过这个元素的时候*/
+     #xc div:hover{
+       /*!important最重要的,前面是惊叹词*/
+          transform: scale(1.5,1.5)!important;
+          /*定位元素有层级之分的,默认是那个标签靠下,哪个记忆居上显示,我们可以通过设置层级来更改显示顺序值越大越靠上显示.*/
+          z-index: 999;
+     }
+    </style>
+</head>
+<body>
+  <audio src="audio/zjl.mp3" autoplay loop></audio>
+    <main id="xc">
+        <!--行内样式的写法 分开写安全好维护-->
+        <div style="background-image:url(images/thumbs/m0.jpg)"> <a href="images/m0.jpg" rel="group">你说很喜欢这张照片</a></div>
+        <div style="background-image:url(images/thumbs/m1.jpg)"><a href="images/m1.jpg" rel="group">我们在开封快乐的时光</a></div>
+        <div style="background-image:url(images/thumbs/m2.jpg)"><a href="images/m2.jpg" rel="group">拉起手，一起走</a></div>
+        <div style="background-image:url(images/thumbs/m3.jpg)"><a href="images/m3.jpg" rel="group">那些胖胖的身影！</a></div>
+        <div style="background-image:url(images/thumbs/m4.jpg)"><a href="images/m4.jpg" rel="group">美美的你！</a></div>
+        <div style="background-image:url(images/thumbs/m5.jpg)"><a href="images/m5.jpg" rel="group">我们一起荡秋千！</a></div>
+        <div style="background-image:url(images/thumbs/m6.jpg)"><a href="images/m6.jpg" rel="group">穿古装的你真好看！</a></div>
+        <div style="background-image:url(images/thumbs/m7.jpg)"><a href="images/m7.jpg" rel="group">我们在清明上河园的快乐</a></div>
+        <div style="background-image:url(images/thumbs/m8.jpg)"><a href="images/m8.jpg" rel="group">第一次来到这个地方！</a></div>
+        <div style="background-image:url(images/thumbs/m9.jpg)"><a href="images/m9.jpg" rel="group">我们朝夕相处的日子</a></div>
+        <div style="background-image:url(images/thumbs/m10.jpg)"><a href="images/m10.jpg" rel="group">你要了许久的东西，安排！</a></div>
+        <div style="background-image:url(images/thumbs/m11.jpg)"><a href="images/m11.jpg" rel="group">这条手链我们一直戴！</a></div>
+        <div style="background-image:url(images/thumbs/m12.jpg)"><a href="images/m12.jpg" rel="group">约了许久的李想大虾！</a></div>
+        <div style="background-image:url(images/thumbs/m13.jpg)"><a href="images/m13.jpg" rel="group">我们就是要一起喝！</a></div>
+        <div style="background-image:url(images/thumbs/m14.jpg)"><a href="images/m14.jpg" rel="group">看着我拍照技术，你还召集吗！</a></div>
+        <div style="background-image:url(images/thumbs/m15.jpg)"><a href="images/m15.jpg" rel="group">喜欢抢镜的我！</a></div>
+         <div style="background-image:url(images/thumbs/m16.jpg)"> <a href="images/m16.jpg" rel="group">众多照片中留下的一张！</a></div>
+        <div style="background-image:url(images/thumbs/m17.jpg)"><a href="images/m17.jpg" rel="group">总统府的我们多么快乐！</a></div>
+        <div style="background-image:url(images/thumbs/m18.jpg)"><a href="images/m18.jpg" rel="group">多潇洒啊你！</a></div>
+        <div style="background-image:url(images/thumbs/m19.jpg)"><a href="images/m19.jpg" rel="group">回忆多多，真情实感，不能忘怀！</a></div>
+        <div style="background-image:url(images/thumbs/m20.jpg)"><a href="images/m20.jpg" rel="group">心中有你，七夕思念！</a></div>
+        <div style="background-image:url(images/thumbs/m21.jpg)"><a href="images/m21.jpg" rel="group">许下诺言， 三生石畔，一生难忘！</a></div>
+        <div style="background-image:url(images/thumbs/m22.jpg)"><a href="images/m22.jpg" rel="group">牵肠挂肚，思绪万千！</a></div>
+        <div style="background-image:url(images/thumbs/m23.jpg)"><a href="images/m23.jpg" rel="group">此时此景，玫瑰月光，相册奉上！</a></div>
+        <div style="background-image:url(images/thumbs/m24.jpg)"><a href="images/m24.jpg" rel="group">曾经的曾经，我们很幸福！</a></div>
+        <div style="background-image:url(images/thumbs/m25.jpg)"><a href="images/m25.jpg" rel="group">一句诺言三生醉，为你饮下断肠散，悬崖勒马是英雄，一生独宠你一人！</a></div>
+        <div style="background-image:url(images/thumbs/m26.jpg)"><a href="images/m26.jpg" rel="group">大风小浪有多少，激情不断才是好，此刻为你做相册，绞尽脑汁也是福！</a></div>
+        
+        </main>
+</body>
+</html>
+<script src="index.js"> </script>
